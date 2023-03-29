@@ -1,0 +1,31 @@
+{
+  "name": "merkletree",
+  "version": "1.0.0",
+  "description": "Implementing merkle to whitelist addresses for ERC721 token minting",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "merkleTree",
+    "proof",
+    "verify"
+  ],
+  "author": "sugalivijaychari@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@ethereumjs/common": "^2.6.5",
+    "@ethereumjs/tx": "^3.5.2",
+    "@openzeppelin/merkle-tree": "^1.0.4",
+    "body-parser": "^1.20.2",
+    "crypto": "^1.0.1",
+    "ethereumjs-tx": "^2.1.2",
+    "ethereumjs-util": "^7.1.5",
+    "ethers": "^6.2.0",
+    "express": "^4.18.2",
+    "merkletreejs": "^0.3.9",
+    "mongoose": "^7.0.3",
+    "path": "^0.12.7",
+    "web3": "^1.9.0"
+  }
+}

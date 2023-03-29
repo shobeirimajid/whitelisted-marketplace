@@ -1,0 +1,318 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Merkle-whitelisted-marketplace",
+		"_postman_id": "47beb4e0-2373-bed3-655d-8b9c62e8c7cc",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "startMerkleTree",
+			"request": {
+				"url": "http://localhost:8909/api/admin/merkle/startMerkleTree",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getMerkleRoot",
+			"request": {
+				"url": "http://localhost:8909/api/common/merkle/getMerkleRoot",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getWhitelistedAddresses",
+			"request": {
+				"url": "http://localhost:8909/api/get/common/getWhitelistedAddresses",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getMarketplaceData",
+			"request": {
+				"url": "http://localhost:8909/api/admin/marketplace/getMarketplaceData",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getContractAbi",
+			"request": {
+				"url": "http://localhost:8909/api/get/user/getContractAbi",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "obtainProof",
+			"request": {
+				"url": "http://localhost:8909/api/user/merkle/obtainProof",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userAddress\": \"0x1aE0EA34a72D944a8C7603FfB3eC30a6669E454C\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "verifyProofOffchain",
+			"request": {
+				"url": "http://localhost:8909/api/common/merkle/verifyProofOffchain",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userAddress\": \"0x1aE0EA34a72D944a8C7603FfB3eC30a6669E454C\",\n    \"proof\": [\n        \"0x01ca5295daeebab9f5eacb7ac20e70d521b829a45735d89cefdda4f1bac587c4\",\n        \"0xe232ccdc9d233771d36c7f35a0e40a4282f76ab350e97ce09795023a9d53c572\",\n        \"0xee666ce9ac86069431ee6eba00a39f1bd936ba90198a084484689b6560989e2b\",\n        \"0xbf5ba02e2a16e8aae66cc53a42f0a88ba2e7741abf9ffeea7d1e2e985dc6db2a\",\n        \"0x283c66cffc71ce90880caa1ab30107ef5cc46ecfd34815aa4ad08cdb87fa0168\",\n        \"0x6a14e2b75e63643f143662a8e0746baa51cff7d88adccac85f829fc441359598\",\n        \"0xa38965f41d5b2f7a1b40f55f5da25ddaefc5b19a66894cfd2c1325ee2a76e9b9\"\n    ]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "whitelistAddress",
+			"request": {
+				"url": "http://localhost:8909/api/admin/merkle/whitelistAddress",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userAddress\": \"0x9031B2B31CaDB4787806bB9e81435F6bc273DED4\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "removeWhitelisted",
+			"request": {
+				"url": "http://localhost:8909/api/admin/merkle/removeWhitelisted",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userAddress\": \"0x5D12B82C7B7C0Dbe561A5590bc39fA5aDdF7F336\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "deployContract",
+			"request": {
+				"url": "http://localhost:8909/api/admin/contract/deployContract",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"senderAddress\": \"0x58e0A9bB142F6028194d6911Efeb8b0c43004b75\",\r\n    \"senderPrivateKey\": \"f616bea9dadce0f8a019613f4529920a862cf38d711c9e381bc66365317125e2\",\r\n    \"rpcUrl\": \"http://localhost:8545\",\r\n    \"chainId\": 3357,\r\n    \"merkleTreeRootHash\": \"0x590952d82ef1ff0f58d2f6ca175f1e729118499f66e27cea3162de89ee1d28c1\",\r\n    \"erc721CollectibleName\": \"Chain Token\",\r\n    \"erc721CollectibleSymbol\": \"CCCL\",\r\n    \"ipfsGatewayUrl\": \"http://localhost:5001/ipfs/\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "setMarketplaceData",
+			"request": {
+				"url": "http://localhost:8909/api/admin/marketplace/setMarketplaceData",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rpcUrl\":\t\"http://localhost:8545\",\r\n\t\"chainId\":\t3357,\r\n\t\"collectibleName\": \"Chain Token\",\r\n\t\"collectibleSymbol\": \"CCCL\",\r\n\t\"ipfsGatewayUrl\": \"http://localhost:5001/ipfs/\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "invokeContract",
+			"request": {
+				"url": "http://localhost:8909/api/admin/contract/invokeContract",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"senderAddress\": \"0x58e0A9bB142F6028194d6911Efeb8b0c43004b75\",\r\n    \"senderPrivateKey\": \"f616bea9dadce0f8a019613f4529920a862cf38d711c9e381bc66365317125e2\",\r\n    \"rpcUrl\": \"http://localhost:8545\",\r\n    \"chainId\": 3357,\r\n    \"contractAddress\": \"0xe259315393967dF59455DF6355403F515Ef576C1\",\r\n    \"merkleTreeRootHash\": \"0xd0efbce8aa3dc6d2b96fd3222956df85ee3ca1510015392d3fc24fe7203386e1\",\r\n    \"functionName\": \"updateRoot\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "queryContract",
+			"request": {
+				"url": "http://localhost:8909/api/common/contract/queryContract",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rpcUrl\": \"http://localhost:8545\",\r\n    \"contractAddress\": \"0x9CdE5fa6AEe3DFAE69a5E06B4D0297CE2357Eaa2\",\r\n    \"functionName\": \"tokenURI\",\r\n    \"tokenId\": 1\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getTransactionReceipt",
+			"request": {
+				"url": "http://localhost:8909/api/common/contract/getTransactionReceipt",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rpcUrl\": \"http://localhost:8545\",\r\n    \"transactionHash\":\"0x314be197fbc4fa891505bdd9add447d57e05bcf0fd4fc156781658930372ef7b\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "insertData",
+			"request": {
+				"url": "http://localhost:8909/api/user/database/insertData",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dbIP\": \"localhost\",\n\t\"dbPort\": 27017,\n\t\"dbName\": \"marketplace_db\",\n\t\"entry\": {\n\t\t\"tokenId\": 103,\n\t\t\"tokenUri\": \"http://localhost:5001/ipfs/0x876545678uhgfcghjkbvt6\",\n\t\t\"owner\": \"0x87654ertyuijhgcxdr678\"\n\t},\n\t\"collectionName\": \"nfts\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "retrieveDataByID",
+			"request": {
+				"url": "http://localhost:8909/api/user/database/retrieveDataByID",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dbIP\": \"localhost\",\n\t\"dbPort\": 27017,\n\t\"dbName\": \"marketplace_db\",\n\t\"tokenId\": 101,\n\t\"collectionName\": \"nfts\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "retrieveAllData",
+			"request": {
+				"url": "http://localhost:8909/api/admin/database/retrieveAllData",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dbIP\": \"localhost\",\n\t\"dbPort\": 27017,\n\t\"dbName\": \"marketplace_db\",\n\t\"collectionName\": \"transfers\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
