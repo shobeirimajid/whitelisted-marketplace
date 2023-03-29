@@ -1,0 +1,23 @@
+{
+  "name": "ipfs-app",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ipfs",
+    "NFT",
+    "baseUri",
+    "tokenUri",
+    "CID"
+  ],
+  "author": "sugalivijaychari@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ipfs-http-client": "^60.0.0"
+  }
+}

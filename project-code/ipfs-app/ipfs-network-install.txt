@@ -1,0 +1,71 @@
+Installation of IPFS: 
+    * Install pre-requisite software go-lang: 
+        * Download latest go-lang software from https://go.dev/dl/ for Linux 
+        * Un tar the software using below command syntax: 
+            $ sudo tar –xvf <go_software_file.tar.gz> 
+        * Move the extracted go folder to global directory to access go globally 
+            * Use below command to move: 
+                $ sudo mv go /usr/local/ 
+        * Create path for go and set environment variables: 
+            * Create folder: 
+                $ mkdir $HOME/gopath 
+            * Open .bashrc file and add below three environment variables at end 
+                * Open .bashrc file 
+                    $sudo vi $HOME/.bashrc 
+                * Add GOROOT, GOPATH and PATH 
+                    export GOROOT=/usr/local/go 
+                    export GOPATH=$HOME/gopath 
+                    export PATH=$PATH:$GOROOT/bin:$GOPATH/bin 
+            * Update .bashrc file and check go version 
+        * source ~/.bashrc 
+        $ go version 
+    * Install IPFS:     
+        * Download the latest IPFS software from here - https://dist.ipfs.tech/#go-ipfs 
+        * Un tar the IPFS software using below command syntax: 
+            $ tar –xvzf <ipfs_software_file.tar.gz> 
+        * Move the extracted ipfs binary to global directory to access ipfs globally. 
+            $ sudo mv kubo/ipfs /usr/local/bin/ipfs 
+        * Check IPFS version 
+        $ ipfs version 
+
+Setup the IPFS private network with one node: 
+    * Initialize node: 
+        IPFS_PATH=~/.ipfs ipfs init 
+    * Create a swarm key 
+        echo -e "/key/swarm/psk/1.0.0/\n/base16/\n`tr -dc 'a-f0-9' < /dev/urandom | head -c64`" > ~/.ipfs/swarm.key 
+    * Bootstrap IPFS node: 
+        * Remove the default bootstrap nodes: 
+            $ IPFS_PATH=~/.ipfs ipfs bootstrap rm --all 
+        * Check if bootstrap nodes are empty? (Bootstrap field should show null) 
+            $ IPFS_PATH=~/.ipfs ipfs config show 
+        * Add ip address and peer identity to bootstrap node 
+            * Note ip address from below command 
+                $ hostname -I 
+            * Note peer identity hash from below command 
+                $ IPFS_PATH=~/.ipfs ipfs config show | grep "PeerID" 
+            * Assemble the below command to add bootstrap node and execute it: 
+                $ IPFS_PATH=~/.ipfs ipfs bootstrap add /ip4/<ip address of bootnode>/tcp/4001/ipfs/<peer identity hash of bootnode> 
+    * Configure IPFS ports 
+        * We need to configure two IPFS ports. 
+            * IPFS API port – to trigger API calls to IPFS node 
+            * IPFS Gateway port – to access IPFS media 
+            * IPFS API port can be any available port 
+            * IPFS Gateway port should be the available port as well as port-opening shall be done to access as an UI 
+        * Configure IPFS API port 
+            $ IPFS_PATH=~/.ipfs ipfs config Addresses.API /ip4/0.0.0.0/tcp/<ipfs_api_port> 
+        * Configure IPFS Gateway port 
+            $ IPFS_PATH=~/.ipfs ipfs config Addresses.Gateway /ip4/10.169.33.155/tcp/<ipfs_gateway_port> 
+    * Start the IPFS private network: 
+        * Set environment variable to start ipfs daemon as a private network. 
+            $ export LIBP2P_FORCE_PNET=1 
+        * Run the IPFS daemon 
+            $ IPFS_PATH=~/.ipfs ipfs daemon >ipfs.log 2>ipfs.err & 
+    * Test the IPFS setup: 
+        * Create a file 
+            $ echo “Hello, world!” >file1.text 
+        * Add created file to IPFS 
+            $ IPFS_PATH=~/.ipfs add file1.txt 
+        * Pin generated CID to IPFS 
+            $ IPFS_PATH=~/.ipfs pin add <generated_CID> 
+    * Try to access created file from the browser using the URL – 
+        * http://<server_ip_address>:<ipfs_gateway_port>/ipfs/<generated_CID> 

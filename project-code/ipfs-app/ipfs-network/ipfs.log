@@ -1,0 +1,35 @@
+Initializing daemon...
+go-ipfs version: 0.7.0
+Repo version: 10
+System version: amd64/linux
+Golang version: go1.14.4
+Swarm is limited to private network of peers with the swarm key
+Swarm key fingerprint: 376c31b13d7feae758d0129df7a0ca35
+Swarm listening on /ip4/127.0.0.1/tcp/4001
+Swarm listening on /ip4/172.17.0.1/tcp/4001
+Swarm listening on /ip4/172.18.0.1/tcp/4001
+Swarm listening on /ip4/172.19.0.1/tcp/4001
+Swarm listening on /ip4/172.20.0.1/tcp/4001
+Swarm listening on /ip4/172.21.0.1/tcp/4001
+Swarm listening on /ip4/172.22.0.1/tcp/4001
+Swarm listening on /ip4/172.23.0.1/tcp/4001
+Swarm listening on /ip4/172.24.0.1/tcp/4001
+Swarm listening on /ip4/172.28.0.1/tcp/4001
+Swarm listening on /ip4/172.29.0.1/tcp/4001
+Swarm listening on /ip4/172.30.0.1/tcp/4001
+Swarm listening on /ip4/172.31.0.1/tcp/4001
+Swarm listening on /ip4/192.168.1.4/tcp/4001
+Swarm listening on /ip4/192.168.144.1/tcp/4001
+Swarm listening on /ip4/192.168.160.1/tcp/4001
+Swarm listening on /ip6/::1/tcp/4001
+Swarm listening on /p2p-circuit
+Swarm announcing /ip4/127.0.0.1/tcp/4001
+Swarm announcing /ip4/192.168.1.4/tcp/4001
+Swarm announcing /ip6/::1/tcp/4001
+API server listening on /ip4/127.0.0.1/tcp/5001
+WebUI: http://127.0.0.1:5001/webui
+Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/8080
+Daemon is ready
+
+Received interrupt signal, shutting down...
+(Hit ctrl-c again to force-shutdown the daemon.)

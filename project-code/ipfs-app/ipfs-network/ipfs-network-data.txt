@@ -1,0 +1,5 @@
+* IPFS network data:
+    * IPFS API URL: http://localhost:5001
+    * IPFS Gateway URL: http://localhost:8080
+    * Hostname IP address: 192.168.1.4
+    * IPFS Peer ID: 12D3KooWSYK3yFkgxU2yUMv4rsmsMbSzqCJzD8bJNoqmyU1GoxAi
