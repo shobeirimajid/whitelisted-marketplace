@@ -6,3 +6,5 @@ This project consists of four sub projects:
 
 Explanation of the project:
  * Project Overview - https://www.loom.com/share/f3ef3709dcbb4b1e87ddb4c316da7b21
+ * Admin Portal Explanation - Part -1:
+    * Initial Setup and Deploy Contract - https://www.loom.com/share/4c518bf458e144a085f69b14ce19c2c0    
