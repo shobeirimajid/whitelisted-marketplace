@@ -9,3 +9,4 @@ Explanation of the project:
  * Admin Portal Explanation - Part -1:
    * Initial Setup and Deploy Contract - https://www.loom.com/share/4c518bf458e144a085f69b14ce19c2c0
    * Whitelist Address and Remove Whitelisted Address - https://www.loom.com/share/35788393b6e84863810c4437321305e3  
+ * IPFS Network, IPFS Node and Smart Contracts - https://www.loom.com/share/122ee28928ef4a2096065391b846ba55
